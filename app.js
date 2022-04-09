@@ -26,7 +26,6 @@ let connnections = [];
 global.arrayProductos = [];
 
 
-//Middlewares
 app.use(bodyParser.json());
 app.use(express.static('./public'));
 app.set('view engine', 'ejs');
@@ -39,9 +38,9 @@ app.use('/', router);
 
 //listen conección socket 
 io.on('connection', (socket) => {
-    console.log('New user connected');
+    console.log('Nuevo usuario connectado');
     connnections.push(socket)
-    socket.username = 'Anonymous';
+    socket.username = 'Anonimo';
 
     //broadcast productos 
     setInterval(function () {
