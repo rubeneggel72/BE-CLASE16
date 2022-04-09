@@ -33,8 +33,8 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(express.static('./public'));
-app.use("/mensajes", mensajes);
-app.use("/productos", productos);
+app.use("/api/mensajes", mensajes);
+app.use("/api/productos", productos);
 app.use('/', router);
 
 //listen conección socket 
